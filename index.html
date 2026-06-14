@@ -11,94 +11,167 @@
 <title>MT5 Edge Factory — Live Dashboard</title>
 <style>
   :root {
-    --bg:#0b1220; --bg2:#111a30; --fg:#e6edf3; --muted:#94a3b8; --border:#1f2a44;
+    --bg:#0b1220; --bg2:#111a30; --fg:#e6edf3; --muted:#94a3b8;
+    --border:#1f2a44; --accent:#7dd3fc; --pill-fg:#0b1220;
+    --tabular: -apple-system, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   }
-  body { font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
-          margin:0; padding:24px; background:var(--bg); color:var(--fg); }
-  h1 { margin:0 0 4px 0; font-size:24px; }
-  h2 { font-size:14px; text-transform:uppercase; letter-spacing:0.08em;
-        color:var(--muted); margin:0 0 12px 0; }
-  .meta { color:var(--muted); font-size:13px; margin-bottom:20px; }
+  /* Light mode override - kicks in only if the OS asks for light.
+     Current dark theme stays as-is for everyone else. */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg:#f5f7fb; --bg2:#ffffff; --fg:#0f172a; --muted:#475569;
+      --border:#e2e8f0; --accent:#0369a1; --pill-fg:#f8fafc;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust:100%; }
+
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    margin:0;
+    background:var(--bg); color:var(--fg);
+    font-size: clamp(14px, 2.5vw, 16px);
+    line-height: 1.55;
+    font-feature-settings: "tnum" 1;
+  }
+
+  /* Centered, padded main column - caps desktop width so the layout
+     doesn't sprawl on ultrawide monitors. */
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: clamp(12px, 2vw, 24px);
+    padding-bottom: max(24px, env(safe-area-inset-bottom, 12px));
+  }
+  main > * { margin-block: 0; }
+
+  h1 { margin:0 0 4px 0; font-size: clamp(20px, 4vw, 28px); line-height: 1.2; }
+  h2 { font-size: clamp(11px, 1.4vw, 14px); text-transform:uppercase;
+        letter-spacing:0.08em; color:var(--muted); margin:0 0 12px 0; }
+  h3 { font-size: clamp(13px, 1.8vw, 16px); margin: 0 0 8px 0; }
+
+  .meta { color:var(--muted); font-size: clamp(11px, 1.6vw, 13px);
+           margin-bottom:20px; line-height:1.55; word-break: break-word; }
+
   .grid { display:grid; grid-template-columns: 2fr 1fr; gap:20px; }
   .grid-3 { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:20px; }
   .card { background:var(--bg2); border:1px solid var(--border); border-radius:10px;
-           padding:18px; margin-bottom:20px; }
-  .verdict { font-size:48px; font-weight:700; line-height:1; }
-  .verdict small { font-size:18px; font-weight:400; color:var(--muted); margin-left:8px; }
+           padding: clamp(14px, 2vw, 18px); margin-bottom:20px; }
+
+  .verdict { font-size: clamp(40px, 8vw, 56px); font-weight:700; line-height:1; }
+  .verdict small { font-size: clamp(14px, 2vw, 18px); font-weight:400;
+                    color:var(--muted); margin-left:8px; }
   .reason-line { color:var(--muted); margin-top:8px; font-size:13px; }
-  .chip-row { display:flex; gap:16px; }
-  .chip { flex:1; text-align:center; background:var(--bg); border-radius:8px;
-           padding:12px; border:1px solid var(--border); }
-  .chip-n { font-size:30px; font-weight:700; }
-  .chip-l { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; }
-  table { width:100%; border-collapse:collapse; font-size:13px; }
-  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--border); }
+
+  /* KPI chip grid: auto-fit so it gracefully reflows on any width. */
+  .chip-row {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap:10px;
+  }
+  .chip { text-align:center; background:var(--bg); border-radius:8px;
+           padding:12px 10px; border:1px solid var(--border); min-height:44px; }
+  .chip-n { font-size: clamp(24px, 5vw, 32px); font-weight:700;
+             font-variant-numeric: tabular-nums; line-height: 1.1; }
+  .chip-l { font-size:11px; color:var(--muted); text-transform:uppercase;
+             letter-spacing:0.08em; margin-top: 2px; }
+
+  /* Tables - horizontal scroll wrapper + right-edge fade hint so users
+     know there is more to scroll into. */
+  .table-scroll {
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    background:
+      linear-gradient(to right, transparent 78%, var(--bg2))
+        no-repeat right center / 28px 100%;
+  }
+  table { width:100%; border-collapse:collapse;
+           font-size: clamp(12px, 1.6vw, 13px);
+           font-variant-numeric: tabular-nums; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--border);
+            vertical-align: top; }
   th { color:var(--muted); font-weight:500; text-transform:uppercase;
-        font-size:11px; letter-spacing:0.06em; }
-  td.ts { font-family:monospace; color:var(--muted); font-size:11px; white-space:nowrap; }
+        font-size:11px; letter-spacing:0.06em; white-space: nowrap; }
+  td.ts, td.num { font-family: var(--tabular); color:var(--muted);
+                   font-size:11px; white-space:nowrap; }
   td.reason { color:var(--muted); font-size:11px; }
-  .pill { display:inline-block; padding:2px 8px; border-radius:999px;
-           font-size:11px; color:#0b1220; font-weight:600; }
+
+  .pill { display:inline-block; padding:3px 10px; border-radius:999px;
+           font-size:11px; color:var(--pill-fg); font-weight:600;
+           line-height: 1.4; }
+
   ul.commits { list-style:none; padding:0; margin:0; }
-  ul.commits li { padding:6px 0; border-bottom:1px solid var(--border); font-size:13px; }
-  ul.commits li code { background:var(--bg); padding:2px 6px; border-radius:4px;
-                         color:#fbbf24; margin-right:8px; font-size:12px; }
+  ul.commits li { padding:8px 0; border-bottom:1px solid var(--border);
+                   font-size:13px; word-break: break-word; }
+  ul.commits li:last-child { border-bottom: none; }
+  ul.commits li code { background:var(--bg); padding:3px 8px; border-radius:4px;
+                         color:#fbbf24; margin-right:8px; font-size:12px;
+                         font-family: var(--tabular); }
+  @media (prefers-color-scheme: light) {
+    ul.commits li code { color:#b45309; background:#fef3c7; }
+  }
+
   .action-block { background:var(--bg); border-left:3px solid #fbbf24;
-                    padding:12px 16px; border-radius:0 8px 8px 0;
+                    padding:14px 16px; border-radius:0 8px 8px 0;
                     font-size:13px; line-height:1.6; }
-  footer { color:var(--muted); font-size:11px; margin-top:24px; }
 
-  /* Wrap wide tables for horizontal scroll on narrow viewports without
-     breaking desktop layout. .table-scroll surrounds every <table>. */
-  .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  /* Tap targets - links/buttons hit comfortable 44px on touch. */
+  a { color: var(--accent); padding: 6px 2px; text-decoration-thickness: 1px;
+       text-underline-offset: 2px; }
+  a, button { min-height: 44px; }
 
-  /* Mobile-only sticky KPI banner. Hidden on desktop, shown at <=768px. */
+  footer { color:var(--muted); font-size: clamp(10px, 1.4vw, 11px);
+            margin-top:24px; padding-top: 12px; border-top: 1px solid var(--border);
+            line-height:1.5; }
+
+  /* Sticky banner is mobile-only; hidden on desktop. */
   .mobile-kpi { display:none; }
+
+  /* ============ TABLET (<= 1024px) ============ */
+  @media (max-width: 1024px) {
+    .grid { grid-template-columns: 1fr 1fr; gap:16px; }
+    .grid-3 { grid-template-columns: 1fr 1fr; gap:16px; }
+  }
 
   /* ============ MOBILE (<= 768px) ============ */
   @media (max-width: 768px) {
-    body { padding:12px; padding-bottom:env(safe-area-inset-bottom,12px); }
-    h1 { font-size:20px; }
-    h2 { font-size:12px; margin:0 0 10px 0; }
-    .meta { font-size:11px; margin-bottom:14px; line-height:1.5; }
+    h2 { margin:0 0 10px 0; }
+    .meta { margin-bottom:14px; }
 
-    /* Stack the two-column grid to one column. */
+    /* Stack multi-column grids. */
     .grid, .grid-3 { grid-template-columns: 1fr; gap:14px; }
-
     .card { padding:14px; margin-bottom:14px; border-radius:12px; }
 
-    /* Throughput verdict: keep punchy. */
-    .verdict { font-size:56px; }
-    .verdict small { font-size:16px; display:block; margin-left:0; margin-top:4px; }
+    /* Hide secondary columns to save horizontal space on phones. */
+    .col-secondary { display: none; }
 
-    /* KPI chips: bigger numbers, easier to read at arm's length. */
-    .chip-row { flex-wrap:wrap; gap:10px; }
-    .chip { flex:1 1 calc(50% - 5px); min-width:0; padding:14px 8px; }
-    .chip-n { font-size:36px; }
-    .chip-l { font-size:10px; }
+    /* Verdict stays punchy. */
+    .verdict small { display:block; margin-left:0; margin-top:4px; }
 
-    /* Tables: keep readable, allow horizontal scroll for outliers. */
-    table { font-size:12px; }
-    th, td { padding:6px 6px; }
+    /* Tables: tighter padding, allow row text to wrap inside reason cells. */
+    th, td { padding:6px 6px; white-space: nowrap; }
+    td.reason { font-size:10px; white-space: normal; max-width: 62vw; }
     td.ts { font-size:10px; }
-    td.reason { font-size:10px; }
-    .pill { font-size:10px; padding:2px 6px; }
+    .pill { font-size:10px; padding:3px 8px; }
 
-    /* Sticky mobile KPI banner — shows verdict + GO/KILL totals at the top
-       even after scrolling, so factory state is always one glance away. */
+    /* Sticky mobile KPI banner - verdict + GO/KILL totals always visible. */
     .mobile-kpi {
       display:flex;
-      position:sticky; top:0; z-index:50;
+      position:sticky; top:0; z-index:100;
       gap:8px;
-      background:linear-gradient(to bottom, var(--bg) 70%, transparent);
-      margin:-12px -12px 12px -12px;
+      background:var(--bg);
+      margin: calc(-1 * clamp(12px, 2vw, 24px)) calc(-1 * clamp(12px, 2vw, 24px)) 12px;
       padding:10px 12px 12px 12px;
+      padding-top: calc(10px + env(safe-area-inset-top, 0));
       border-bottom:1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
     .mk-verdict {
       flex:0 0 auto; font-weight:800; font-size:22px;
-      padding:6px 10px; border-radius:8px; color:#0b1220;
+      padding:8px 12px; border-radius:8px; color:#0b1220;
       display:flex; align-items:center; gap:4px;
+      min-height: 44px;
     }
     .mk-verdict small { font-size:11px; opacity:0.85; }
     .mk-pair { flex:1 1 0; display:flex; gap:6px; }
@@ -106,22 +179,30 @@
       flex:1; text-align:center; padding:6px 4px;
       border-radius:6px; background:var(--bg2); border:1px solid var(--border);
       font-size:11px; color:var(--muted);
+      min-height: 44px;
+      display:flex; flex-direction:column; justify-content:center;
     }
     .mk-chip b { display:block; font-size:18px; font-weight:700; line-height:1.1; }
 
-    ul.commits li { font-size:12px; padding:5px 0; }
-    .action-block { font-size:12px; }
+    ul.commits li { font-size:12px; padding:6px 0; }
+    .action-block { font-size:13px; padding:12px 14px; }
   }
 
   /* Extra-narrow phones (iPhone SE etc.) */
   @media (max-width: 380px) {
-    .verdict { font-size:44px; }
-    .chip-n { font-size:28px; }
-    .mk-verdict { font-size:18px; }
+    .chip-row { grid-template-columns: repeat(2, 1fr); }
+    .mk-verdict { font-size:18px; padding:6px 10px; }
+    .mk-chip b { font-size:16px; }
+  }
+
+  /* Honor user motion preferences. */
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   }
 </style>
 </head>
 <body>
+<main>
   <!-- Mobile-only sticky KPI banner (hidden on desktop via CSS). -->
   <div class="mobile-kpi" aria-label="Quick KPI banner">
     <div class="mk-verdict" style="background:#22c55e;">
@@ -137,12 +218,12 @@
     </div>
   </div>
 
-  <h1>MT5 Edge Factory — Live Dashboard</h1>
+  <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-14 09:50:36 ·
-    JST: 2026-06-14 18:50:36 ·
-    Auto-reload: 60s ·
-    Families tracked: 25 ·
+    Refreshed (UTC): 2026-06-14 10:53:58 &middot;
+    JST: 2026-06-14 19:53:58 &middot;
+    Auto-reload: 60s &middot;
+    Families tracked: 25 &middot;
     Strategy folders: 274
   </div>
 
@@ -164,89 +245,89 @@
       </div>
 
       <div class="card">
-        <h2>Decision flow — last 7 days</h2>
+        <h2>Decision flow &mdash; last 7 days</h2>
         <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">6</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">0</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">36</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">7</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
-        <h2>Decision flow — last 30 days</h2>
+        <h2>Decision flow &mdash; last 30 days</h2>
         <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">50</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">10</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">147</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Recent research_log appends (last 12)</h2>
         <div class="table-scroll"><table>
-          <thead><tr><th>Timestamp</th><th>Family / Variant</th>
+          <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
         <tr>
-          <td class="ts">2026-06-14T13:02:00Z</td>
+          <td class="ts col-secondary">2026-06-14T13:02:00Z</td>
           <td>eur_gbp_relative_reversal_d1</td>
           <td><span class="pill" style="background:#6b7280;">PARKED</span></td>
           <td class="reason">crisis_conditional_no_active_regime_5bd_stall_no_new_failure</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-14T13:01:30Z</td>
+          <td class="ts col-secondary">2026-06-14T13:01:30Z</td>
           <td>bno_p90_eurjpy_h4_long</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">status_line_dashboard_reconciliation_only_no_new_failure</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-14T13:01:00Z</td>
+          <td class="ts col-secondary">2026-06-14T13:01:00Z</td>
           <td>supt_atr_m30_eurjpy</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">class_level_supt_subd1_umbrella_plus_immediate_sibling_r2_fail</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-14T13:00:30Z</td>
+          <td class="ts col-secondary">2026-06-14T13:00:30Z</td>
           <td>supt_ng_h1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">class_level_v13_h1_supt_ng_family_kill_rule_c_non_compliant</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-14T13:00:00Z</td>
+          <td class="ts col-secondary">2026-06-14T13:00:00Z</td>
           <td>supt_ng_composite_h4</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">class_level_umbrella_supt_subd1_pattern</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-14T11:51:33Z</td>
+          <td class="ts col-secondary">2026-06-14T11:51:33Z</td>
           <td>sma40</td>
           <td><span class="pill" style="background:#6b7280;">GO_CANDIDATE_SMALL_N</span></td>
           <td class="reason">USDCAD leg failed (-24.5p/4 R2 + -47.3p/2 sealed = structural drag, HARD_KILL); EURJPY indeterminate (n=3); USDJPY carries solo at reduced s</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-13T13:59:12Z</td>
+          <td class="ts col-secondary">2026-06-13T13:59:12Z</td>
           <td>n0041</td>
           <td><span class="pill" style="background:#6b7280;">EA_AUTOCOMPILE_FAIL</span></td>
           <td class="reason">locate_mq5: no .mq5 fou</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-13T13:51:33Z</td>
+          <td class="ts col-secondary">2026-06-13T13:51:33Z</td>
           <td>crypto_funding_reversion_perp_subd1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">G1 FAIL: direction inverted -- 7/9 coins negative in disc (pooled disc EP=-40.66bp t&lt;0; only BNB+24bp/LINK+35bp positive); pooled OOS EP=-35</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-13T13:46:21Z</td>
+          <td class="ts col-secondary">2026-06-13T13:46:21Z</td>
           <td>macd</td>
           <td><span class="pill" style="background:#6b7280;">EA_SCAFFOLD_OK</span></td>
           <td class="reason"></td>
         </tr>
         <tr>
-          <td class="ts">2026-06-13T13:33:47Z</td>
+          <td class="ts col-secondary">2026-06-13T13:33:47Z</td>
           <td>volspike_fade_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">d1_density_too_low_~5pyr_per_pair; best_full_t=1.50_below_GO_bar_3; fails_M9_direction_shuffle_placebo; high_oos_ep_is_smalln_noise; mechani</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-13T13:01:51Z</td>
+          <td class="ts col-secondary">2026-06-13T13:01:51Z</td>
           <td>ntfs_cross_country_diff_d1</td>
           <td><span class="pill" style="background:#6b7280;">CONFIRMED_HARD_KILL</span></td>
           <td class="reason">pooled_t=1.51_below_GO_bar_3; n=2394_below_MinTRL=2775; signal_real_but_subthreshold; wave3_regime_conditioner_does_not_rescue_t; long_only_</td>
         </tr>
         <tr>
-          <td class="ts">2026-06-13T12:33:00Z</td>
+          <td class="ts col-secondary">2026-06-13T12:33:00Z</td>
           <td>n0131_realskew_lowvol_jpy4_d1</td>
           <td><span class="pill" style="background:#22c55e;">EA_R2_PASS</span></td>
           <td class="reason">Gaitame deploy-broker R2 PASS criterion B: sleeve n=54 EP=+89.89p PF=1.97 dev=+5.4% (FAVORABLE upward) vs canon Python sealed +85.3p; per-le</td>
@@ -257,20 +338,20 @@
       <div class="card">
         <h2>Recent deploy-broker R2 results</h2>
         <div class="table-scroll"><table>
-          <thead><tr><th>Folder</th><th>Title</th><th>Verdict</th></tr></thead>
+          <thead><tr><th class="col-secondary">Folder</th><th>Title</th><th>Verdict</th></tr></thead>
           <tbody>
         <tr>
-          <td>r2_n0126_oanda_evidence_20260603</td>
+          <td class="col-secondary">r2_n0126_oanda_evidence_20260603</td>
           <td>n0126 mend — 2nd-broker R2 (OANDA-Japan Demo) — RESULTS 2026-06-03</td>
           <td><span class="pill" style="background:#f59e0b;">?</span></td>
         </tr>
         <tr>
-          <td>r2_n0126_gaitame_evidence_20260603</td>
+          <td class="col-secondary">r2_n0126_gaitame_evidence_20260603</td>
           <td>n0126 mend — Deploy-broker R2 (Gaitame Finest) — RESULTS 2026-06-03</td>
           <td><span class="pill" style="background:#f59e0b;">?</span></td>
         </tr>
         <tr>
-          <td>r2_n0126_icmarkets_attempt_20260603</td>
+          <td class="col-secondary">r2_n0126_icmarkets_attempt_20260603</td>
           <td>n0126 mend — IC Markets-Demo R2 Attempt — 2026-06-03</td>
           <td><span class="pill" style="background:#f59e0b;">?</span></td>
         </tr></tbody>
@@ -354,7 +435,7 @@
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>e9776ec4a</code> feat(dashboard): public Pages mirror + mobile-responsive CSS</li><li><code>68c468f89</code> Pre-Screen 5-Q audit for calendar-event H1 sleeve hypothesis (3 sealed PASS cells aggregation + extended candidate list)</li><li><code>6d2ca2dae</code> chore(registry): reconcile 5 stale STATUS entries (n0014/n0039/s239/n0115/n0051) - autopsy-driven</li><li><code>9b8f91de3</code> Add cost snapshot and probe logs for ICMarkets on 2026-06-14</li><li><code>11691bd27</code> chore: remove 44GB stale scan backtest_engine.log + gitignore future</li></ul>
+        <ul class="commits"><li><code>fd1f476d4</code>  feat(dashboard): fully automated public sync via Windows scheduled task</li><li><code>36a748847</code>  fix(setup_public_dashboard_repo.ps1): guard empty-clone HEAD + empty-remote pull</li><li><code>5a58a6274</code>  chore: remove STATUS.md.restore sidecars (registry reconciliation debris)</li><li><code>cd0ea59e0</code>  feat(dashboard): public Pages mirror + mobile-responsive CSS</li><li><code>e9776ec4a</code>  feat(dashboard): public Pages mirror + mobile-responsive CSS</li></ul>
       </div>
     </div>
   </div>
@@ -365,5 +446,6 @@
     All data is derived from the local repo state at build time.
     KGI: 1 GO_CANDIDATE per day.
   </footer>
+</main>
 </body>
 </html>

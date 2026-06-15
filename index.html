@@ -205,53 +205,53 @@
 <main>
   <!-- Mobile-only sticky KPI banner (hidden on desktop via CSS). -->
   <div class="mobile-kpi" aria-label="Quick KPI banner">
-    <div class="mk-verdict" style="background:#22c55e;">
-      (A)<small>healthy</small>
+    <div class="mk-verdict" style="background:#ef4444;">
+      (D)<small>mis</small>
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
         <b style="color:#22c55e;">13</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">33</b>KILL 7d
+        <b style="color:#ef4444;">34</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-15 22:37:28 &middot;
-    JST: 2026-06-16 07:37:28 &middot;
+    Refreshed (UTC): 2026-06-15 23:07:28 &middot;
+    JST: 2026-06-16 08:07:28 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
-    Strategy folders: 275
+    Strategy folders: 277
   </div>
 
   <div class="grid">
     <div>
       <div class="card">
         <h2>Throughput Health (4-tier)</h2>
-        <div class="verdict" style="color:#22c55e;">
-          (A) <small>healthy</small>
+        <div class="verdict" style="color:#ef4444;">
+          (D) <small>mis</small>
         </div>
         <div class="reason-line">
-          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (A) healthy
+          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (D) mis-labeled
   today: 2026-06-16
   most_recent_go: 2026-06-15
   days_since_go: 1
-  next_candidate_open_30d: 11
-  verdict_reason: GO 1d ago (&lt;= 14d) AND next_30d=11 (&gt;= 4)</pre>
+  next_candidate_open_30d: 13
+  verdict_reason: GO_CANDIDATE in research_log but no synonym in recent git commits</pre>
         </div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">13</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">1</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">33</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">2</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">13</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">3</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">34</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">2</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">56</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">11</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">154</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">56</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">13</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">155</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -260,6 +260,24 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T12:31:00Z</td>
+          <td>commodities_exgold_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
+          <td class="reason">M9 direction-shuffle placebo BEATS core (frac 0.055 = long-beta artifact) + passes_oos(vol_rt) FAIL (t1.74, 1/2 regimes) + leave-one-year-ou</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T12:30:00Z</td>
+          <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T14:50:00Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason"></td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-15T00:55:00Z</td>
           <td>macro_trendpullback_heldlow_d1</td>
@@ -313,24 +331,6 @@
           <td>realized_jump_reversal_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">disc jratio&gt;=0.4 best t=1.84&lt;2; concentration U-shape (LOW=+0.86p MID=-3.42p HIGH=+4.22p) 非単調; OOS n=2 powerless; daily密度構造的不足(jratio&gt;=0.4: </td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T22:06:40Z</td>
-          <td>n0109_boj_fomc_sameweek_jpycross_h4_short_nbar</td>
-          <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_LIVE</span></td>
-          <td class="reason">Forward-demo attach BOTH brokers: Gaitame portable acct 22005720 (GBPJPY-) + OANDA portable acct 400095259 (GBPJPY) both loaded successfully</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T22:02:53Z</td>
-          <td>n0119_bno_p90_gbpusd_h4_short_hold5</td>
-          <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_LIVE</span></td>
-          <td class="reason">Forward-demo attach Gaitame portable acct 22005720: GBPUSD- H4 loaded successfully (anchor staged to MQL5\Files); AutoTrading ON</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T22:02:00Z</td>
-          <td>n0116_tlt_p10_usdcad_h4_long_nbar</td>
-          <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_LIVE</span></td>
-          <td class="reason">Forward-demo attach Gaitame portable acct 22005720: USDCAD- H4 loaded successfully (anchor CSV staged to Common\Files); AutoTrading ON</td>
         </tr></tbody>
         </table></div>
       </div>
@@ -356,7 +356,7 @@
 
     <div>
       <div class="card">
-        <h2>Today's one action (autopsy 20260615)</h2>
+        <h2>Today's one action (autopsy 20260616)</h2>
         <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **TODO**</div>
       </div>
 
@@ -428,13 +428,17 @@
         <tr>
           <td>n0067_btcusd_h4_donchian_gated</td>
           <td><span class="pill" style="background:#3b82f6;">FORWARD_DEMO_PREP</span></td>
+        </tr>
+        <tr>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#06b6d4;">ACTIVE_RESEARCH</span></td>
         </tr></tbody>
         </table></div>
       </div>
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>9fbe00f72</code>  Enhance logging and add chart attachment verification script</li><li><code>dc7ae5642</code>  Add probation check script for n0133 strategy and update STATUS.md for n0116 and n0119 strategies</li><li><code>909541261</code>  session 20260614: autonomy-prep complete (A/B/C/D/E + audit F + verification)</li><li><code>4319f3b25</code>  merge: integrate origin/main (sealed-2025 re-judgability audit) into dashboard consolidation</li><li><code>4ed5cda8c</code>  dashboard: rebuild with computed Throughput Health verdict (A healthy)</li></ul>
+        <ul class="commits"><li><code>82643554e</code>  fix(n0067): CRLF + ASCII no-BOM bat / docs(n0135): scout reproduction (h4 parquet, STATUS-aligned)</li><li><code>1503a1ad5</code>  feat(n0137): deploy-broker R2 runbook (Gaitame + OANDA, EURUSD/EURJPY H1, 2010-2024) + sealed_precommit</li><li><code>533b3b77c</code>  merge origin/main into alt-dev branch + remap n0136_ecb_eur_drift -&gt; n0137 (n0136 numeric collided with trendpullback_heldlow_asia_uk_idx_d1 already on main). ECB-&gt;EUR post-decision continuation drift sleeve carried forward as n0137 (magic 1013700001); reservations/research_log de-duplicated, all internal refs + folder/files renamed.</li><li><code>7fb36b50c</code>  n0136: prepare deploy-broker R2 handoff (user chose R2-before-sealed). EA_IMPLEMENTATION_SPEC + frozen inputs, canonical trade-set reference CSV (disc+OOS only, 2025 excluded to preserve sealed one-shot), HUMAN_TASK deploy-broker R2 doc with pass/fail bar. STATUS resequenced: deploy-broker R2 -&gt; sealed -&gt; GO.</li><li><code>fce07ff6c</code>  chore: refresh CLAUDE.md auto-counts (n0136 added)</li></ul>
       </div>
     </div>
   </div>

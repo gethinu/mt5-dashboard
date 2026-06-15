@@ -210,21 +210,21 @@
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
-        <b style="color:#22c55e;">12</b>GO 7d
+        <b style="color:#22c55e;">13</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">27</b>KILL 7d
+        <b style="color:#ef4444;">33</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-15 13:37:27 &middot;
-    JST: 2026-06-15 22:37:27 &middot;
+    Refreshed (UTC): 2026-06-15 14:07:30 &middot;
+    JST: 2026-06-15 23:07:30 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
-    Strategy folders: 274
+    Strategy folders: 275
   </div>
 
   <div class="grid">
@@ -237,21 +237,21 @@
         <div class="reason-line">
           <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (A) healthy
   today: 2026-06-15
-  most_recent_go: 2026-06-14
-  days_since_go: 1
-  next_candidate_open_30d: 10
-  verdict_reason: GO 1d ago (&lt;= 14d) AND next_30d=10 (&gt;= 4)</pre>
+  most_recent_go: 2026-06-15
+  days_since_go: 0
+  next_candidate_open_30d: 11
+  verdict_reason: GO 0d ago (&lt;= 14d) AND next_30d=11 (&gt;= 4)</pre>
         </div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">12</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">0</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">27</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">5</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">13</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">1</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">33</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">5</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">55</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">10</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">148</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">56</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">11</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">154</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -260,6 +260,54 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T00:55:00Z</td>
+          <td>macro_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#22c55e;">SEALED_PASS</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T05:00:00Z</td>
+          <td>n0067_donchian_gated_crypto_extension</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason">Borderline PASS, bull-beta caveat MANDATORY. Sleeve ex-BTC ex-ltc passes_oos PASS vol+rates t=+5.32 n=718 (incl-BTC t=+5.59). Beats both man</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T04:30:00Z</td>
+          <td>index_overnight_intraday_decomp_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">NOT-DEPLOYABLE (closes #6&#x27;s tight-venue revival path). Premium REAL on SPX cash (+0.0223R/day = ~2.2bps/night, t=5.01, passes_oos vol+rates </td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T03:50:00Z</td>
+          <td>index_overnight_intraday_decomp_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">Fails Q2 cost. Overnight premium is REAL on cash-SPX (overnight Sharpe +0.078 &gt;&gt; intraday +0.037, t=5.01, NOT just beta) but raw magnitude +</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T03:30:00Z</td>
+          <td>crypto_liquidation_cascade_reversion_subd1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">FADE(thesis) uniformly NEGATIVE passes_oos t=-1.9..-12.9 EP&lt;0 0-1 posreg EVERY tf/hold/threshold; FOLLOW(continuation placebo) passes (t up </td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T02:00:00Z</td>
+          <td>ust_auction_dealer_takedown_bond_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">All PASS=False under passes_oos (best full-history t=1.08). Named direction (high takedown-&gt;short bond) is disc-POSITIVE 2010-2020 (QE era: </td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T01:00:00Z</td>
+          <td>commercial_cot_direct_commodity_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">Decision UNCHANGED but now properly supported. ALL 12 construction-variants PASS=False under passes_oos. Max full-history t across everythin</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-15T00:30:00Z</td>
+          <td>commercial_cot_direct_commodity_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">Q3 placebo-differentiation FAIL + OOS direction-inversion (same lesson as FX COT s237/s238). Pooled FOLLOW disc never significant any thresh</td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-14T00:00:00Z</td>
           <td>realized_jump_reversal_d1</td>
@@ -283,54 +331,6 @@
           <td>n0116_tlt_p10_usdcad_h4_long_nbar</td>
           <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_LIVE</span></td>
           <td class="reason">Forward-demo attach Gaitame portable acct 22005720: USDCAD- H4 loaded successfully (anchor CSV staged to Common\Files); AutoTrading ON</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T21:38:00Z</td>
-          <td>n0134_cci_lowvol_breakout_fx_h4</td>
-          <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_LIVE</span></td>
-          <td class="reason">Forward-demo attach Gaitame portable acct 22005720: USDJPY-/EURJPY- H4 loaded successfully; AutoTrading ON</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T21:40:00Z</td>
-          <td>n0133_sma40_lowvol_breakout_h4</td>
-          <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_LIVE</span></td>
-          <td class="reason">Forward-demo attach Gaitame portable acct 22005720: USDJPY- H4 loaded successfully; reduced size 90-day probation (fwd USDJPY n&gt;=20 EP&gt;0 by </td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T21:28:00Z</td>
-          <td>n0132_macd_lowvol_jpy3_h4</td>
-          <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_LIVE</span></td>
-          <td class="reason">Forward-demo attach Gaitame portable acct 22005720: USDJPY-/EURJPY-/GBPJPY- H4 all loaded successfully (OnInit OK no init-fail); AutoTrading</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T13:02:00Z</td>
-          <td>eur_gbp_relative_reversal_d1</td>
-          <td><span class="pill" style="background:#6b7280;">PARKED</span></td>
-          <td class="reason">crisis_conditional_no_active_regime_5bd_stall_no_new_failure</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T13:01:30Z</td>
-          <td>bno_p90_eurjpy_h4_long</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">status_line_dashboard_reconciliation_only_no_new_failure</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T13:01:00Z</td>
-          <td>supt_atr_m30_eurjpy</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">class_level_supt_subd1_umbrella_plus_immediate_sibling_r2_fail</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T13:00:30Z</td>
-          <td>supt_ng_h1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">class_level_v13_h1_supt_ng_family_kill_rule_c_non_compliant</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-14T13:00:00Z</td>
-          <td>supt_ng_composite_h4</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">class_level_umbrella_supt_subd1_pattern</td>
         </tr></tbody>
         </table></div>
       </div>
@@ -439,17 +439,245 @@
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>1b56958ab</code>  obs: weekly observation 20260614 (Phase PP gate)</li><li><code>8218d6890</code>  docs: add outstanding actions dispatch prompt 2026-06-14</li><li><code>c1a026756</code>  chore(r2): add n0129 + n0014 Gaitame deploy-broker R2 runbooks</li><li><code>ebdbe63bd</code>  chore(state): refresh CLAUDE.md auto-counts and chunks registry</li><li><code>cf7f151d8</code>  chore(deploy): record n0109/n0116/n0119 live attach + R2 runbooks + auto_detect script</li></ul>
+        <ul class="commits"><li><code>dc7ae5642</code>  Add probation check script for n0133 strategy and update STATUS.md for n0116 and n0119 strategies</li><li><code>909541261</code>  session 20260614: autonomy-prep complete (A/B/C/D/E + audit F + verification)</li><li><code>4319f3b25</code>  merge: integrate origin/main (sealed-2025 re-judgability audit) into dashboard consolidation</li><li><code>4ed5cda8c</code>  dashboard: rebuild with computed Throughput Health verdict (A healthy)</li><li><code>648a94e6b</code>  chore: refresh CLAUDE.md auto-counts after dashboard consolidation</li></ul>
       </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Forward-demo deployment &mdash; registry/forward_outcomes.csv</h2>
+    <div class="table-scroll"><table class="sortable">
+      <thead><tr><th>Strategy</th><th class="col-secondary">Broker</th><th>Trades</th>
+                 <th>Fwd EP</th><th class="col-secondary">BT EP</th>
+                 <th class="col-secondary">EP ratio</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>n0006</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">66.76</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0041</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">50.70</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0041</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">50.70</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0046</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">18.69</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0047</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">22.43</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0056</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">3.17</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0056</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">3.17</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0064_cell1</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">~17</td>
+          <td class="num">~-3.8</td>
+          <td class="num col-secondary">2.53</td>
+          <td class="num col-secondary">~-1.5</td>
+          <td><span class="pill" style="background:#ef4444;">ALARM (KILLED 2026-05-27)</span></td>
+        </tr>
+        <tr>
+          <td>n0064_cell1</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">2.53</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#ef4444;">ALARM (KILLED 2026-05-27)</span></td>
+        </tr>
+        <tr>
+          <td>n0064_cell2</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">~10</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">18.26</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#ef4444;">ALARM (DETACHED 2026-05-30)</span></td>
+        </tr>
+        <tr>
+          <td>n0064_cell2</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">18.26</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#ef4444;">ALARM (DETACHED 2026-05-30)</span></td>
+        </tr>
+        <tr>
+          <td>n0064_cell3</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">~10</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">3.62</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#ef4444;">ALARM (DETACHED 2026-05-30)</span></td>
+        </tr>
+        <tr>
+          <td>n0064_cell3</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">3.62</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#ef4444;">ALARM (DETACHED 2026-05-30)</span></td>
+        </tr>
+        <tr>
+          <td>n0065</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">58.70</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>n0065</td>
+          <td class="col-secondary">oanda</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">58.70</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr>
+        <tr>
+          <td>s132</td>
+          <td class="col-secondary">gaitame</td>
+          <td class="num">N/A</td>
+          <td class="num">N/A</td>
+          <td class="num col-secondary">8.40</td>
+          <td class="num col-secondary">N/A</td>
+          <td><span class="pill" style="background:#22c55e;">N/A (no broker CSV)</span></td>
+        </tr></tbody>
+    </table></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Live exposure by symbol &mdash; forward_trades.csv</h2>
+      <div class="table-scroll"><table class="sortable">
+        <thead><tr><th>Symbol</th><th>Trades</th><th>Net lot</th>
+                   <th class="col-secondary">Gross lot</th><th>&Sigma; pips</th></tr></thead>
+        <tbody>
+        <tr>
+          <td>EURJPY</td>
+          <td class="num">4</td>
+          <td class="num" style="color:#22c55e;">+0.04</td>
+          <td class="num col-secondary">0.04</td>
+          <td class="num">+53.0</td>
+        </tr>
+        <tr>
+          <td>EURUSD</td>
+          <td class="num">4</td>
+          <td class="num" style="color:#ef4444;">-0.04</td>
+          <td class="num col-secondary">0.04</td>
+          <td class="num">-7.0</td>
+        </tr>
+        <tr>
+          <td>GBPJPY</td>
+          <td class="num">3</td>
+          <td class="num" style="color:#22c55e;">+0.01</td>
+          <td class="num col-secondary">0.03</td>
+          <td class="num">+88.0</td>
+        </tr>
+        <tr>
+          <td>EURGBP</td>
+          <td class="num">2</td>
+          <td class="num" style="color:#22c55e;">+0.02</td>
+          <td class="num col-secondary">0.02</td>
+          <td class="num">+34.0</td>
+        </tr></tbody>
+      </table></div>
+    </div>
+    <div class="card">
+      <h2>Pair correlation &mdash; D1 daily returns (computed)</h2>
+      <div class="table-scroll"><table><thead><tr><th></th><th>EURJPY</th><th>EURUSD</th><th>GBPJPY</th><th>EURGBP</th></tr></thead><tbody><tr><th style='text-align:left;'>EURJPY</th><td class="num" style="background:#1f497d;color:#ffffff;text-align:center;">1.00</td><td class="num" style="background:#ffcc99;color:#0b1220;text-align:center;">0.54</td><td class="num" style="background:#ef9a9a;color:#0b1220;text-align:center;">0.79</td><td class="num" style="background:transparent;color:inherit;text-align:center;">0.20</td></tr><tr><th style='text-align:left;'>EURUSD</th><td class="num" style="background:#ffcc99;color:#0b1220;text-align:center;">0.54</td><td class="num" style="background:#1f497d;color:#ffffff;text-align:center;">1.00</td><td class="num" style="background:transparent;color:inherit;text-align:center;">0.25</td><td class="num" style="background:transparent;color:inherit;text-align:center;">0.39</td></tr><tr><th style='text-align:left;'>GBPJPY</th><td class="num" style="background:#ef9a9a;color:#0b1220;text-align:center;">0.79</td><td class="num" style="background:transparent;color:inherit;text-align:center;">0.25</td><td class="num" style="background:#1f497d;color:#ffffff;text-align:center;">1.00</td><td class="num" style="background:transparent;color:inherit;text-align:center;">-0.44</td></tr><tr><th style='text-align:left;'>EURGBP</th><td class="num" style="background:transparent;color:inherit;text-align:center;">0.20</td><td class="num" style="background:transparent;color:inherit;text-align:center;">0.39</td><td class="num" style="background:transparent;color:inherit;text-align:center;">-0.44</td><td class="num" style="background:#1f497d;color:#ffffff;text-align:center;">1.00</td></tr></tbody></table></div><div class="reason-line">6061 overlapping D1 days · returns through 2026-05-08</div>
     </div>
   </div>
 
   <footer>
     Built by <code>scripts/build_factory_dashboard.py</code>.
     Re-runs daily at 08:00 JST via the Cloud Routine, plus on demand.
-    All data is derived from the local repo state at build time.
+    All data is derived from the local repo state at build time
+    (research_log / STATUS.md / forward_outcomes / forward_trades / D1 OHLC).
     KGI: 1 GO_CANDIDATE per day.
   </footer>
 </main>
+<script>
+/* Lightweight click-to-sort for tables marked .sortable (the interactive-table
+   feature folded in from the retired reports/dashboard portfolio view). State is
+   ephemeral — the 60s meta-refresh re-renders from fresh data. */
+(function () {
+  function val(s) {
+    var n = parseFloat((s || '').replace(/[+,%\s]/g, ''));
+    return isNaN(n) ? null : n;
+  }
+  document.querySelectorAll('table.sortable thead th').forEach(function (th, idx) {
+    th.style.cursor = 'pointer';
+    th.title = 'Click to sort';
+    th.addEventListener('click', function () {
+      var table = th.closest('table'), tb = table.tBodies[0];
+      if (!tb) return;
+      var rows = Array.prototype.slice.call(tb.rows);
+      var dir = th.getAttribute('data-sd') === 'asc' ? -1 : 1;
+      th.setAttribute('data-sd', dir === 1 ? 'asc' : 'desc');
+      rows.sort(function (r1, r2) {
+        var a = (r1.cells[idx] ? r1.cells[idx].innerText : '').trim();
+        var b = (r2.cells[idx] ? r2.cells[idx].innerText : '').trim();
+        var na = val(a), nb = val(b);
+        if (na !== null && nb !== null) return dir * (na - nb);
+        return dir * a.localeCompare(b);
+      });
+      rows.forEach(function (r) { tb.appendChild(r); });
+    });
+  });
+})();
+</script>
 </body>
 </html>

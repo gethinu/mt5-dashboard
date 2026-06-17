@@ -205,53 +205,53 @@
 <main>
   <!-- Mobile-only sticky KPI banner (hidden on desktop via CSS). -->
   <div class="mobile-kpi" aria-label="Quick KPI banner">
-    <div class="mk-verdict" style="background:#22c55e;">
-      (A)<small>healthy</small>
+    <div class="mk-verdict" style="background:#ef4444;">
+      (D)<small>mis</small>
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
         <b style="color:#22c55e;">10</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">28</b>KILL 7d
+        <b style="color:#ef4444;">46</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-17 13:37:27 &middot;
-    JST: 2026-06-17 22:37:27 &middot;
+    Refreshed (UTC): 2026-06-17 14:07:28 &middot;
+    JST: 2026-06-17 23:07:28 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
-    Strategy folders: 277
+    Strategy folders: 278
   </div>
 
   <div class="grid">
     <div>
       <div class="card">
         <h2>Throughput Health (4-tier)</h2>
-        <div class="verdict" style="color:#22c55e;">
-          (A) <small>healthy</small>
+        <div class="verdict" style="color:#ef4444;">
+          (D) <small>mis</small>
         </div>
         <div class="reason-line">
-          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (A) healthy
+          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (D) mis-labeled
   today: 2026-06-17
   most_recent_go: 2026-06-15
   days_since_go: 2
-  next_candidate_open_30d: 13
-  verdict_reason: GO 2d ago (&lt;= 14d) AND next_30d=13 (&gt;= 4)</pre>
+  next_candidate_open_30d: 14
+  verdict_reason: GO_CANDIDATE in research_log but no synonym in recent git commits</pre>
         </div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">10</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">3</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">28</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">2</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">10</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">4</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">46</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">2</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">56</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">12</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">154</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">56</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">13</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">172</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -261,76 +261,76 @@
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
         <tr>
-          <td class="ts col-secondary">2026-06-15T12:31:00Z</td>
-          <td>commodities_exgold_trendpullback_heldlow_d1</td>
+          <td class="ts col-secondary">2026-06-17T13:31:00Z</td>
+          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T13:30:00Z</td>
+          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
+          <td><span class="pill" style="background:#6b7280;">TRIAGE_PASS_SECONDARY</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T13:00:00Z</td>
+          <td>bonds_duration_trendpullback_heldlow_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">M9 direction-shuffle placebo BEATS core (frac 0.055 = long-beta artifact) + passes_oos(vol_rt) FAIL (t1.74, 1/2 regimes) + leave-one-year-ou</td>
+          <td class="reason">M9 direction-shuffle BETA ARTIFACT (frac 0.875, core full-t -1.12 &lt; shuffle mean); OOS-t -6.85 bond-bear collapse; passes_oos FAIL 1/2 (OOS </td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-15T12:30:00Z</td>
-          <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
-          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-15T14:50:00Z</td>
-          <td>n0137_ecb_eur_drift</td>
-          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-15T00:55:00Z</td>
-          <td>macro_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#22c55e;">SEALED_PASS</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-15T05:00:00Z</td>
-          <td>n0067_donchian_gated_crypto_extension</td>
-          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
-          <td class="reason">Borderline PASS, bull-beta caveat MANDATORY. Sleeve ex-BTC ex-ltc passes_oos PASS vol+rates t=+5.32 n=718 (incl-BTC t=+5.59). Beats both man</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-15T04:30:00Z</td>
-          <td>index_overnight_intraday_decomp_d1</td>
+          <td class="ts col-secondary">2026-06-17T00:15:00Z</td>
+          <td>dtcc_rates_swap_directional_flow_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">NOT-DEPLOYABLE (closes #6&#x27;s tight-venue revival path). Premium REAL on SPX cash (+0.0223R/day = ~2.2bps/night, t=5.01, passes_oos vol+rates </td>
+          <td class="reason">DATA-STRUCTURE screen-out (not a mechanism kill). The intended net-directional-positioning mechanism is STRUCTURALLY UNEXTRACTABLE: DTCC RAT</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-15T03:50:00Z</td>
-          <td>index_overnight_intraday_decomp_d1</td>
+          <td class="ts col-secondary">2026-06-16T23:45:00Z</td>
+          <td>dtcc_weaksignal_orthogonal_composite_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">Fails Q2 cost. Overnight premium is REAL on cash-SPX (overnight Sharpe +0.078 &gt;&gt; intraday +0.037, t=5.01, NOT just beta) but raw magnitude +</td>
+          <td class="reason">CONFIRMS CLAUDE.md Rule I section 6 (raw-weak signals do NOT compose to GO). Composite of 3 individually-M9-noise signals: pooled n=191 t=-2</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-15T03:30:00Z</td>
-          <td>crypto_liquidation_cascade_reversion_subd1</td>
+          <td class="ts col-secondary">2026-06-16T23:30:00Z</td>
+          <td>dtcc_commodity_option_flow_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">FADE(thesis) uniformly NEGATIVE passes_oos t=-1.9..-12.9 EP&lt;0 0-1 posreg EVERY tf/hold/threshold; FOLLOW(continuation placebo) passes (t up </td>
+          <td class="reason">DATA-QUALITY screen-out (not a mechanism kill). Acquired + rigorously inspected the new DTCC commodities option data: strikes are heterogene</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-15T02:00:00Z</td>
-          <td>ust_auction_dealer_takedown_bond_d1</td>
+          <td class="ts col-secondary">2026-06-16T22:30:00Z</td>
+          <td>dtcc_option_iv_smile_multidim_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">All PASS=False under passes_oos (best full-history t=1.08). Named direction (high takedown-&gt;short bond) is disc-POSITIVE 2010-2020 (QE era: </td>
+          <td class="reason">GENUINELY NEW IV-smile dimensions, all KILL. Per-pair M9 hits are SIGN-INCONSISTENT across pairs (AUDUSD term wants MOMENTUM M9 0.087 vs NZD</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-15T01:00:00Z</td>
-          <td>commercial_cot_direct_commodity_d1</td>
+          <td class="ts col-secondary">2026-06-16T21:30:00Z</td>
+          <td>dtcc_option_risk_reversal_iv_skew_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">Decision UNCHANGED but now properly supported. ALL 12 construction-variants PASS=False under passes_oos. Max full-history t across everythin</td>
+          <td class="reason">GENUINELY NEW (not dup): the DTCC option-implied risk-reversal (BS-inverted IV smile asymmetry) carries only a faint noise-level directional</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-15T00:30:00Z</td>
-          <td>commercial_cot_direct_commodity_d1</td>
+          <td class="ts col-secondary">2026-06-16T20:30:00Z</td>
+          <td>norges_spu_forced_flow_eurnok_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">Q3 placebo-differentiation FAIL + OOS direction-inversion (same lesson as FX COT s237/s238). Pooled FOLLOW disc never significant any thresh</td>
+          <td class="reason">CLOSEOUT of Norges SPU forced-flow at intraday resolution (daily close-to-close + FADE + SURPRISE already killed 2026-06-16). In-cloud Dukas</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-14T00:00:00Z</td>
-          <td>realized_jump_reversal_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">disc jratio&gt;=0.4 best t=1.84&lt;2; concentration U-shape (LOW=+0.86p MID=-3.42p HIGH=+4.22p) 非単調; OOS n=2 powerless; daily密度構造的不足(jratio&gt;=0.4: </td>
+          <td class="ts col-secondary">2026-06-16T18:50:00Z</td>
+          <td>dtcc_fx_option_skew_conditioner_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">Option-flow skew adds NO conditioning information. V1 (skew-agree) does NOT beat V0 (breakout V1 t-2.93 worse than V0 -2.65; momentum V1 -0.</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-16T18:45:00Z</td>
+          <td>dtcc_fx_option_flow_surge_vol_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">Option-flow notional surge does NOT predict realized-vol expansion: pooled hi/lo fwd-vol ratio 1.04x (flat), Spearman +0.02, FAILS shuffle-n</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-16T18:20:00Z</td>
+          <td>dtcc_fx_option_gamma_pin_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">CLOSEOUT of the DTCC option-pin frontier across BOTH resolutions. Intraday 10am-NY-cut pin: TOWARD-pin entry-&gt;cut t=-2.25 (NEGATIVE, spot mo</td>
         </tr></tbody>
         </table></div>
       </div>

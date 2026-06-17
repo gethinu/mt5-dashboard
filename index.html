@@ -205,8 +205,8 @@
 <main>
   <!-- Mobile-only sticky KPI banner (hidden on desktop via CSS). -->
   <div class="mobile-kpi" aria-label="Quick KPI banner">
-    <div class="mk-verdict" style="background:#ef4444;">
-      (D)<small>mis</small>
+    <div class="mk-verdict" style="background:#22c55e;">
+      (A)<small>healthy</small>
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
@@ -220,8 +220,8 @@
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-17 15:07:28 &middot;
-    JST: 2026-06-18 00:07:28 &middot;
+    Refreshed (UTC): 2026-06-17 15:37:28 &middot;
+    JST: 2026-06-18 00:37:28 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 278
@@ -231,16 +231,16 @@
     <div>
       <div class="card">
         <h2>Throughput Health (4-tier)</h2>
-        <div class="verdict" style="color:#ef4444;">
-          (D) <small>mis</small>
+        <div class="verdict" style="color:#22c55e;">
+          (A) <small>healthy</small>
         </div>
         <div class="reason-line">
-          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (D) mis-labeled
+          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (A) healthy
   today: 2026-06-18
   most_recent_go: 2026-06-15
   days_since_go: 3
   next_candidate_open_30d: 13
-  verdict_reason: GO_CANDIDATE in research_log but no synonym in recent git commits</pre>
+  verdict_reason: GO 3d ago (&lt;= 14d) AND next_30d=13 (&gt;= 4)</pre>
         </div>
       </div>
 
@@ -260,6 +260,12 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T14:30:00Z</td>
+          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
+          <td><span class="pill" style="background:#6b7280;">R2_PRESCREEN_PASS</span></td>
+          <td class="reason"></td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-17T13:31:00Z</td>
           <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
@@ -325,12 +331,6 @@
           <td>dtcc_fx_option_flow_surge_vol_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
           <td class="reason">Option-flow notional surge does NOT predict realized-vol expansion: pooled hi/lo fwd-vol ratio 1.04x (flat), Spearman +0.02, FAILS shuffle-n</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-16T18:20:00Z</td>
-          <td>dtcc_fx_option_gamma_pin_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">CLOSEOUT of the DTCC option-pin frontier across BOTH resolutions. Intraday 10am-NY-cut pin: TOWARD-pin entry-&gt;cut t=-2.25 (NEGATIVE, spot mo</td>
         </tr></tbody>
         </table></div>
       </div>
@@ -357,7 +357,7 @@
     <div>
       <div class="card">
         <h2>Today's one action (autopsy 20260617)</h2>
-        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **TODO**</div>
+        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **[ESCALATION — 2 日連続同ボトルネック]** n0130 (GLD/DAX/CAC/TLT) と n0136 (N225+FTSE) の IC Markets MT5 deploy-broker CFD R2 を実行する。手順: `docs/PROMPT_n0129_deploy_broker_cfd_r2_20260605.md` の手順を n0130/n0136 に適用 (symbol 名だけ差し替え、every-tick)。deviation&lt;50% かつ EP&gt;0 の両条件を満たせばその場で GO_CANDIDATE 宣言まで完了できる。kill_memo バックログ 4 件 (supt_ng_composite_h4 等) はこの R2 セッション後の次アクション。</div>
       </div>
 
       <div class="card">

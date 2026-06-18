@@ -205,8 +205,8 @@
 <main>
   <!-- Mobile-only sticky KPI banner (hidden on desktop via CSS). -->
   <div class="mobile-kpi" aria-label="Quick KPI banner">
-    <div class="mk-verdict" style="background:#6b7280;">
-      (?)<small>?</small>
+    <div class="mk-verdict" style="background:#22c55e;">
+      (A)<small>healthy</small>
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
@@ -220,8 +220,8 @@
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-18 01:07:28 &middot;
-    JST: 2026-06-18 10:07:28 &middot;
+    Refreshed (UTC): 2026-06-18 01:37:29 &middot;
+    JST: 2026-06-18 10:37:29 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 278
@@ -231,11 +231,16 @@
     <div>
       <div class="card">
         <h2>Throughput Health (4-tier)</h2>
-        <div class="verdict" style="color:#6b7280;">
-          (?) <small>?</small>
+        <div class="verdict" style="color:#22c55e;">
+          (A) <small>healthy</small>
         </div>
         <div class="reason-line">
-          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;"></pre>
+          <pre style="margin:0;font-family:inherit;white-space:pre-wrap;">throughput_health: (A) healthy
+  today: 2026-06-18
+  most_recent_go: 2026-06-15
+  days_since_go: 3
+  next_candidate_open_30d: 14
+  verdict_reason: GO 3d ago (&lt;= 14d) AND next_30d=14 (&gt;= 4)</pre>
         </div>
       </div>
 
@@ -256,60 +261,6 @@
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
         <tr>
-          <td class="ts col-secondary">&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main</td>
-          <td></td>
-          <td><span class="pill" style="background:#6b7280;"></span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T09:30:00Z</td>
-          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
-          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
-          <td class="reason">handoff lead only (not a decision): optional EP-concentration filter for n0138, needs session&#x27;s own non-overlap+LOO-regime validation</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T08:30:00Z</td>
-          <td>n0130_macro_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">participant-state = secondary EP-tilt, instrument-class-specific, orthogonal to 5+1i+7, NOT standalone weapon; binding GO constraint is regi</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T07:30:00Z</td>
-          <td>n0130_macro_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">entry-context weapon #8 not found on conditioned host: EP gradients exist but none robustly raises deployable passes_oos t across all 4 legs</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T06:30:00Z</td>
-          <td>n0130_macro_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">weapon #8 candidate refuted: zigzag does not separate winners/losers; removing it lowers deployable t (own-goal). Adjacent low-vol EP-tilt f</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T05:30:00Z</td>
-          <td>crypto_liquidation_cascade_reversion_subd1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">COST_EXCEEDS + zero directional info: M9 cost-free baseline t~0, real FOLLOW non-overlap t=-74 (m5 h6), FADE t=-78, both ~-0.4R = cost. Intr</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T15:00:00Z</td>
-          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
-          <td><span class="pill" style="background:#6b7280;">ROBUSTNESS_PASS</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">=======</td>
-          <td></td>
-          <td><span class="pill" style="background:#6b7280;"></span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/claude/edge-development-38qd2n</td>
-          <td></td>
-          <td><span class="pill" style="background:#6b7280;"></span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
           <td class="ts col-secondary">2026-06-17T19:45:00Z</td>
           <td>flight_to_quality_riskoff_d1</td>
           <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
@@ -326,6 +277,60 @@
           <td>miners_meanrevert_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">M7 structural inversion of the miners trend kill: z-fade mean-reversion also SUB-GO by the M11 standard. daily-MTM t (GO statistic) 1.95&lt;3 S</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T17:30:00Z</td>
+          <td>gold_miners_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
+          <td class="reason">Thesis FALSIFIED: gold/silver miners are NOT more trend-persistent - they strongly MEAN-REVERT at 21-bar D1. Arsenal trend-pullback stack sy</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T16:30:00Z</td>
+          <td>macro_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
+          <td class="reason">METHODOLOGY CLARIFICATION (no kill/downgrade). Pre-R2 non-overlap audit: n0130 non-overlap single-position collapses to full-t 0.95 / M9 BET</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T15:30:00Z</td>
+          <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
+          <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
+          <td class="reason">CAVEAT (not kill) on pending n0136: headline trade-t 5.17 is substantially overlap-inflated - non-overlap deployable series full-t 1.74 / OO</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T15:00:00Z</td>
+          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
+          <td><span class="pill" style="background:#6b7280;">ROBUSTNESS_PASS</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T14:30:00Z</td>
+          <td>commodity_fx_meanrevert_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
+          <td class="reason">SUPERSEDES same-day OBSERVATION (13:30Z). On the deployable NON-OVERLAP position series the apparent mean-reversion edge COLLAPSES: full-t 3</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T14:30:00Z</td>
+          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
+          <td><span class="pill" style="background:#6b7280;">R2_PRESCREEN_PASS</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T13:31:00Z</td>
+          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T13:30:00Z</td>
+          <td>commodity_fx_meanrevert_d1</td>
+          <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
+          <td class="reason">Real M9-passing mean-reversion signal (full-t 3.50, shuffle frac 0.000 = NOT beta; OOS passes_oos 2/2 t3.21) but SUB-GO: passes_oos FULL FAI</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-17T13:30:00Z</td>
+          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
+          <td><span class="pill" style="background:#6b7280;">TRIAGE_PASS_SECONDARY</span></td>
+          <td class="reason"></td>
         </tr></tbody>
         </table></div>
       </div>
@@ -433,7 +438,7 @@
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>9d28ef722</code>  chore: refresh CLAUDE.md after merge</li><li><code>9ca7096b8</code>  fix(CLAUDE.md): update strategy folder count to reflect new total</li><li><code>e2c3d06b0</code>  chore: refresh auto-maintained counts in CLAUDE.md</li><li><code>9d8461ade</code>  edge-dev: flight-to-quality GO-attempt FAILED (FX havens also dead, lead downgraded)</li><li><code>b3b8ee60e</code>  chore: refresh auto-maintained counts in CLAUDE.md</li></ul>
+        <ul class="commits"><li><code>e9a502864</code>  fix(dashboard): update KPI values and refresh timestamps in live dashboard</li><li><code>2b61e844a</code>  fix(docs): strip committed conflict markers from factory_autopsy 2026-06-05/06/07</li><li><code>7ff21be11</code>  Merge claude/edge-development-38qd2n: M11 daily-MTM codification + 4 HARD_KILLs (commodity-FX both / gold-miners both) + n0130/n0136 pre-R2 audits</li><li><code>d874bd9aa</code>  chore: refresh CLAUDE.md auto-count</li><li><code>133e485e8</code>  Handoff to n0138: M11 Time-At-Price EP-concentration tilt (lead, not a fix)</li></ul>
       </div>
     </div>
   </div>

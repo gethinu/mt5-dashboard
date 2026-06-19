@@ -213,15 +213,15 @@
         <b style="color:#22c55e;">8</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">44</b>KILL 7d
+        <b style="color:#ef4444;">45</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-19 05:37:27 &middot;
-    JST: 2026-06-19 14:37:27 &middot;
+    Refreshed (UTC): 2026-06-19 06:07:30 &middot;
+    JST: 2026-06-19 15:07:30 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 278
@@ -246,12 +246,12 @@
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">8</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">5</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">44</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">2</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">8</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">5</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">45</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">2</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">50</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">14</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">143</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">50</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">14</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">144</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">18</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -260,6 +260,12 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-19T05:59:01Z</td>
+          <td>n0129_seasonal_calendar_sleeve_6pair</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
+          <td class="reason">deploy-broker R2 sleeve EP_net negative; 5 of 6 legs unfavourable sign-flip dev 134 to 532 pct; pre-committed deploy_cost kill trigger fired</td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-17T19:45:00Z</td>
           <td>flight_to_quality_riskoff_d1</td>
@@ -325,12 +331,6 @@
           <td>commodity_fx_meanrevert_d1</td>
           <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
           <td class="reason">Real M9-passing mean-reversion signal (full-t 3.50, shuffle frac 0.000 = NOT beta; OOS passes_oos 2/2 t3.21) but SUB-GO: passes_oos FULL FAI</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T13:30:00Z</td>
-          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
-          <td><span class="pill" style="background:#6b7280;">TRIAGE_PASS_SECONDARY</span></td>
-          <td class="reason"></td>
         </tr></tbody>
         </table></div>
       </div>

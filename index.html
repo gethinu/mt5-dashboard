@@ -210,18 +210,18 @@
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
-        <b style="color:#22c55e;">9</b>GO 7d
+        <b style="color:#22c55e;">10</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">41</b>KILL 7d
+        <b style="color:#ef4444;">42</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-20 07:07:27 &middot;
-    JST: 2026-06-20 16:07:27 &middot;
+    Refreshed (UTC): 2026-06-20 07:37:27 &middot;
+    JST: 2026-06-20 16:37:27 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 278
@@ -246,12 +246,12 @@
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">9</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">5</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">41</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">0</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">10</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">5</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">42</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">0</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">50</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">14</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">141</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">10</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">51</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">14</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">142</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">10</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -260,6 +260,18 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-20T09:30:00Z</td>
+          <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">financing_gate_fail_2.15x_over_breakeven: IC Markets JP225+UK100 CFD longs require benchmark+2.5% overnight per broker markup (BOJ~0.5%-&gt;JP2</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-20T07:10:00Z</td>
+          <td>n0130_macro_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#22c55e;">GO_CANDIDATE</span></td>
+          <td class="reason"></td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-20T09:00:00Z</td>
           <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
@@ -319,18 +331,6 @@
           <td>commodity_fx_meanrevert_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">SUPERSEDES same-day OBSERVATION (13:30Z). On the deployable NON-OVERLAP position series the apparent mean-reversion edge COLLAPSES: full-t 3</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T14:30:00Z</td>
-          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
-          <td><span class="pill" style="background:#6b7280;">R2_PRESCREEN_PASS</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T13:31:00Z</td>
-          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
-          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
-          <td class="reason"></td>
         </tr></tbody>
         </table></div>
       </div>
@@ -352,7 +352,7 @@
     <div>
       <div class="card">
         <h2>Today's one action (autopsy 20260620)</h2>
-        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **n0136 IC Markets index-CFD R2 を実施する。** `C:\MT5_ICmarkets\terminal64.exe` (acct 52899622) を起動し、`docs/PROMPT_n0136_deploy_broker_index_cfd_r2_20260615.md` に従って UK100 + NI225 の Strategy Tester を実行する。PASS 判定 (sleeve EP &gt; 0 かつ dev &lt; 50% かつ sign-flip なし) であれば即座に GO_CANDIDATE へ昇格し、Phase-0 contract を開く。これが今日の工場前進への唯一の経路。</div>
+        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>**本日の実績 (2026-06-20 セッション)**:<br>- **n0130 → GO_CANDIDATE 昇格** (commit 488eb3fb17): IC Markets 4-leg cost gate PASS (blended 0.863%/yr vs 6.5% BE, 13× 安全マージン). CAC=F40 confirmed, TLT=UST30Y_U6 carry=0 (futures-style). Research log row 1165 追記。<br>- **n0136 financing concern 判明** (commit ef1aea7d55): IC Markets index-CFD overnight cost は blended 7.13%/yr (JP225=5.57%, UK100=8.69%), n0136 break-even ~27.6 bp equiv → 実効 59.4 bp → **2.15× over bre</div>
       </div>
 
       <div class="card">
@@ -419,6 +419,10 @@
         <tr>
           <td>n0067_btcusd_h4_donchian_gated</td>
           <td><span class="pill" style="background:#3b82f6;">FORWARD_DEMO_PREP</span></td>
+        </tr>
+        <tr>
+          <td>n0130_macro_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#a3e635;">GO_CANDIDATE</span></td>
         </tr>
         <tr>
           <td>n0131_realskew_lowvol_jpy4_d1</td>

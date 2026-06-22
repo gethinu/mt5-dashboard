@@ -213,18 +213,18 @@
         <b style="color:#22c55e;">2</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">29</b>KILL 7d
+        <b style="color:#ef4444;">30</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-22 13:07:27 &middot;
-    JST: 2026-06-22 22:07:27 &middot;
+    Refreshed (UTC): 2026-06-22 13:37:29 &middot;
+    JST: 2026-06-22 22:37:29 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
-    Strategy folders: 278
+    Strategy folders: 280
   </div>
 
   <div class="grid">
@@ -239,19 +239,19 @@
   today: 2026-06-22
   most_recent_go: 2026-06-20
   days_since_go: 2
-  next_candidate_open_30d: 14
-  verdict_reason: GO 2d ago (&lt;= 14d) AND next_30d=14 (&gt;= 4)</pre>
+  next_candidate_open_30d: 16
+  verdict_reason: GO 2d ago (&lt;= 14d) AND next_30d=16 (&gt;= 4)</pre>
         </div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">2</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">3</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">29</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">0</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">2</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">5</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">30</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">0</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">51</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">14</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">142</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">10</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">51</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">16</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">143</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">10</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -260,6 +260,24 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-21T23:33:59Z</td>
+          <td>n0141_trendpullback_heldlow_em_idx_dnvol_d1</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-21T13:22:19Z</td>
+          <td>em_indices_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">dsr_deflation_fail_0.943_below_0.95_and_weak_sharpe_0.98: beats M9 beta gate (non-beta) and S4 daily-MTM t3.84 + OOS passes_oos PASS, but DS</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-21T06:38:07Z</td>
+          <td>n0140_trendpullback_heldlow_asia_pacific_idx_d1</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason"></td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-20T22:00:00Z</td>
           <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
@@ -313,24 +331,6 @@
           <td>gold_miners_trendpullback_heldlow_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">Thesis FALSIFIED: gold/silver miners are NOT more trend-persistent - they strongly MEAN-REVERT at 21-bar D1. Arsenal trend-pullback stack sy</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T16:30:00Z</td>
-          <td>macro_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
-          <td class="reason">METHODOLOGY CLARIFICATION (no kill/downgrade). Pre-R2 non-overlap audit: n0130 non-overlap single-position collapses to full-t 0.95 / M9 BET</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T15:30:00Z</td>
-          <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
-          <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
-          <td class="reason">CAVEAT (not kill) on pending n0136: headline trade-t 5.17 is substantially overlap-inflated - non-overlap deployable series full-t 1.74 / OO</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T15:00:00Z</td>
-          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
-          <td><span class="pill" style="background:#6b7280;">ROBUSTNESS_PASS</span></td>
-          <td class="reason"></td>
         </tr></tbody>
         </table></div>
       </div>
@@ -352,7 +352,7 @@
     <div>
       <div class="card">
         <h2>Today's one action (autopsy 20260622)</h2>
-        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **TODO**</div>
+        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **§6 の `EVAL_INTEGRITY_VIOLATION` を調査して再 pin する。** `scripts/check_go_review.py` のハッシュが `701504d76ed2` から `bc800e6b1c58` へ変化した理由を `git log --oneline scripts/check_go_review.py` で確認し、変更が GO ゲートを弱体化させるものでなければ `python scripts/check_eval_integrity.py --update --ack &quot;&lt;理由&gt;&quot;` を実行してマニフェストを commit せよ。意図しない変更であれば即座に revert。GO 評価スクリプトのサイレント変更は reward-hacking safeguard の死角になるため、他のどの backlog 作業よりも先に対処すること。</div>
       </div>
 
       <div class="card">
@@ -433,7 +433,7 @@
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>3e09ec315</code>  chore(r2): refine _R2Common.ps1 + dashboard/state refresh</li><li><code>842e4d205</code>  obs: weekly observation 20260621 (Phase PP gate)</li><li><code>32847558b</code>  chore(n0138,n0067,r2): IC Markets R2 runbook + PowerShell R2 automation + n0067-v2 sealed update</li><li><code>387ba98f2</code>  feat(r2-powershell): batch orchestration scripts for pending R2 (n0067_v2 + n0138 + n0136 + n0130 + n0014_v1_01 + n0137_gaitame)</li><li><code>ac6b15787</code>  Merge origin/main (e36e8e13) into crypto-sleeve-deploy before main fast-forward</li></ul>
+        <ul class="commits"><li><code>12c38591d</code>  chore(r2,telemetry): R2 run logs (n0014/n0067/n0130/n0136/n0137/n0138) + reasoning-dist union + dashboard refresh</li><li><code>0567d76fd</code>  fix: re-pin eval-integrity manifest for check_go_review.py cp932 fix (no GO-gate change)</li><li><code>c6709c3d0</code>  Merge branch &#x27;claude/edge-development-2i3h6k&#x27;</li><li><code>e4f6f9c40</code>  chore: refresh CLAUDE.md auto-counts after n0141 open</li><li><code>040e5463a</code>  open n0141: EM idx S4 + downside-vol-target sizing -&gt; NEXT_CANDIDATE_OPEN (discipline-layer rescue)</li></ul>
       </div>
     </div>
   </div>

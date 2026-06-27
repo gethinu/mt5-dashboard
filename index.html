@@ -210,21 +210,21 @@
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
-        <b style="color:#22c55e;">2</b>GO 7d
+        <b style="color:#22c55e;">4</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">6</b>KILL 7d
+        <b style="color:#ef4444;">10</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-27 04:37:27 &middot;
-    JST: 2026-06-27 13:37:27 &middot;
+    Refreshed (UTC): 2026-06-27 05:07:28 &middot;
+    JST: 2026-06-27 14:07:28 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
-    Strategy folders: 280
+    Strategy folders: 281
   </div>
 
   <div class="grid">
@@ -241,12 +241,12 @@
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">2</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">1</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">6</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">0</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">4</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">3</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">10</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">0</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">51</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">12</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">125</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">10</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">52</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">14</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">128</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">10</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -256,76 +256,76 @@
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
         <tr>
-          <td class="ts col-secondary">2026-06-23T06:00:00Z</td>
-          <td>n0141_trendpullback_heldlow_em_idx_dnvol_d1</td>
+          <td class="ts col-secondary">2026-06-25T04:00:01Z</td>
+          <td>unified_global_equity_trend_d1</td>
+          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
+          <td class="reason">reinforces n0138 GO_CANDIDATE (developed-core carries sealed); EM adds no standalone family</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-25T04:00:00Z</td>
+          <td>em_equity_copper_trendpullback_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">em_cfd_financing_gate_fail_tolerance~0pct_yr_vs_real_carry_6-11pct (n0136 precedent) AND etf_cash_steelman_fail_nontransfer_to_usd_etf_fx_em</td>
+          <td class="reason">SEALED_2025_FAIL daily-MTM -1.69 per-signal -0.30; non-overlap 0.22; corroborates em_indices kill 2026-06-21</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-22T01:00:00Z</td>
-          <td>rareevent_sleeve_latemarch_jpy_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">Sleeve rescue NULL — bundling does NOT rescue B. Apparent daily-MTM t 3.76 (h5) / 4.93 (h10) is OVERLAP-INFLATED: entering each of the last </td>
+          <td class="ts col-secondary">2026-06-25T03:00:00Z</td>
+          <td>disciplinelayer_batch_mine</td>
+          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
+          <td class="reason"></td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-22T00:00:00Z</td>
-          <td>commodity_trendpullback_heldlow_sleeve_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">Edge does NOT transfer to commodities. daily-MTM concurrent-book Sharpe -0.00 / t -0.02 (5259 daily obs, GO bar t&gt;=3); per-trade full-t -0.0</td>
+          <td class="ts col-secondary">2026-06-25T02:00:00Z</td>
+          <td>em_equity_copper_trendpullback_d1</td>
+          <td><span class="pill" style="background:#22c55e;">TRIAGE_PASS</span></td>
+          <td class="reason"></td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-21T23:33:59Z</td>
-          <td>n0141_trendpullback_heldlow_em_idx_dnvol_d1</td>
+          <td class="ts col-secondary">2026-06-25T00:00:01Z</td>
+          <td>macro_trendpullback_heldlow_d1</td>
+          <td><span class="pill" style="background:#6b7280;">REGISTRY_REMAP</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-25T00:00:00Z</td>
+          <td>tokyo_open_fade_jpycross_5pair_h1</td>
+          <td><span class="pill" style="background:#6b7280;">REGISTRY_REMAP</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-23T13:30:00Z</td>
+          <td>fx_overnight_reversal_widesleeve</td>
           <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
           <td class="reason"></td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-21T13:22:19Z</td>
-          <td>em_indices_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">dsr_deflation_fail_0.943_below_0.95_and_weak_sharpe_0.98: beats M9 beta gate (non-beta) and S4 daily-MTM t3.84 + OOS passes_oos PASS, but DS</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-20T22:00:00Z</td>
-          <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
+          <td class="ts col-secondary">2026-06-23T12:30:00Z</td>
+          <td>cac_cashopen_gapfade_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">JP225 leg R2_FAIL (MT5_R=-0.018&lt;0; IC Markets testable window 2016+ misses 2010-2015 alpha; sub-period Python also -0.034). UK100 mechanism </td>
+          <td class="reason">CASH_INDEX_OPEN_PRINT_ARTIFACT: Dukascopy France40 CFD |gap|&gt;=1.2% days=15 vs yf-cash=134 (9x inflation); real-tick OOS t=1.74 n=15 non-sign</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-20T09:30:00Z</td>
-          <td>n0136_trendpullback_heldlow_asia_uk_idx_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">financing_gate_fail_2.15x_over_breakeven: IC Markets JP225+UK100 CFD longs require benchmark+2.5% overnight per broker markup (BOJ~0.5%-&gt;JP2</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-20T09:00:00Z</td>
-          <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
-          <td><span class="pill" style="background:#22c55e;">GO_CANDIDATE</span></td>
+          <td class="ts col-secondary">2026-06-23T11:55:00Z</td>
+          <td>cac_cashopen_gapfade_d1</td>
+          <td><span class="pill" style="background:#22c55e;">TRIAGE_PASS</span></td>
           <td class="reason"></td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-20T07:10:00Z</td>
-          <td>n0130_macro_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#22c55e;">GO_CANDIDATE</span></td>
-          <td class="reason"></td>
+          <td class="ts col-secondary">2026-06-25T01:00:00Z</td>
+          <td>crypto_xs_momentum_lsbook_d1</td>
+          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
+          <td class="reason">passes_full_gauntlet_beta_neutral: daily-MTM full t=3.24 (clears M11 GO bar t&gt;=3) Sharpe0.99 disc t2.65/Sh1.11 OOS t1.68/Sh0.99; per-year Sh</td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-19T05:59:01Z</td>
-          <td>n0129_seasonal_calendar_sleeve_6pair</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">deploy-broker R2 sleeve EP_net negative; 5 of 6 legs unfavourable sign-flip dev 134 to 532 pct; pre-committed deploy_cost kill trigger fired</td>
+          <td class="ts col-secondary">2026-06-24T03:30:00Z</td>
+          <td>realrate_xau_anchor_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">disc_real_but_oos_reduces_to_gold_beta_complement_test_catches: stage1 &#x27;realY lvl&lt;p10-&gt;LONG gold&#x27; looks PASS (h20 disc+112.5 t5.9 lift+29.6 </td>
         </tr>
         <tr>
-          <td class="ts col-secondary">2026-06-17T19:45:00Z</td>
-          <td>flight_to_quality_riskoff_d1</td>
-          <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
-          <td class="reason">GO-ATTEMPT FAILED -&gt; flight-to-quality lead DOWNGRADED from priority to narrow residual. Non-duration refinement (gold + long-JPY/CHF) made </td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-17T19:00:00Z</td>
-          <td>flight_to_quality_riskoff_d1</td>
-          <td><span class="pill" style="background:#6b7280;">OBSERVATION</span></td>
-          <td class="reason">BEST LEAD of 2026-06-17 (NOT a kill). NEW family flight-to-quality risk-off haven sleeve: REAL signal (non-overlap M9 0.010=NOT beta, BEATS </td>
+          <td class="ts col-secondary">2026-06-24T02:30:00Z</td>
+          <td>cper_audusd_anchor_d1</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
+          <td class="reason">aud_short_beta_in_disguise_3honest_gate_fail: only-passing-config CPER&lt;p10-&gt;SHORT fails G1(uncond AUDUSD drift strongly neg h20 EP-16p t-4.6</td>
         </tr></tbody>
         </table></div>
       </div>
@@ -428,7 +428,7 @@
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>4cf4417ee</code>  verdict(n0130): finalize GLD/XAUUSD deploy-broker R2 = PASS (sign-confirmed)</li><li><code>2615cad0c</code>  build(n0130): compile+stage xauusd + ger40 R2 EAs (IC Markets, no-rescaffold)</li><li><code>c6bfc5b26</code>  chore(data): relocate 6.2GB M1 cache to D:\mt5_data\ohlc_m1 via junction</li><li><code>2bda1a435</code>  chore(r2-logs): move bulky R2/tester logs to D: + gitignore them</li><li><code>8a3a6a8e4</code>  chore(sync): R2 batch results + OANDA audit + task-mgmt consolidation cleanup</li></ul>
+        <ul class="commits"><li><code>a49a648a2</code>  Add compilation logs for new strategies: n0130_macro_trendpullback_ger40_d1 and n0130_macro_trendpullback_xauusd_d1</li><li><code>7186bd647</code>  100-knock: 3 themes complete (idxmicro/anchor/cmdbond ~51 fires all KILL) + partial artifacts from 4 limit-stopped agents</li><li><code>7134bb7f5</code>  chore: update reasoning dist history log</li><li><code>3fc5bf692</code>  chore: daily factory autopsy 2026-06-26</li><li><code>1e8b0dc6f</code>  100譛ｬ繝弱ャ繧ｯ: additional in-flight subagent artifacts</li></ul>
       </div>
     </div>
   </div>

@@ -220,8 +220,8 @@
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-29 14:37:27 &middot;
-    JST: 2026-06-29 23:37:27 &middot;
+    Refreshed (UTC): 2026-06-29 15:07:28 &middot;
+    JST: 2026-06-30 00:07:28 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 281
@@ -241,12 +241,12 @@
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">2</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">2</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">5</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">0</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">2</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">2</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">5</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">1</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">46</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">13</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">123</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">10</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">46</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">13</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">123</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">11</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -255,6 +255,12 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-25T05:00:00Z</td>
+          <td>em_equity_copper_trendpullback_d1</td>
+          <td><span class="pill" style="background:#a855f7;">RESCUE</span></td>
+          <td class="reason"></td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-25T04:00:01Z</td>
           <td>unified_global_equity_trend_d1</td>
@@ -320,12 +326,6 @@
           <td>realrate_xau_anchor_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
           <td class="reason">disc_real_but_oos_reduces_to_gold_beta_complement_test_catches: stage1 &#x27;realY lvl&lt;p10-&gt;LONG gold&#x27; looks PASS (h20 disc+112.5 t5.9 lift+29.6 </td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-24T02:30:00Z</td>
-          <td>cper_audusd_anchor_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">aud_short_beta_in_disguise_3honest_gate_fail: only-passing-config CPER&lt;p10-&gt;SHORT fails G1(uncond AUDUSD drift strongly neg h20 EP-16p t-4.6</td>
         </tr></tbody>
         </table></div>
       </div>
@@ -428,7 +428,7 @@
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>9fa2c1533</code>  obs: weekly observation 20260628 (Phase PP gate)</li><li><code>a49a648a2</code>  Add compilation logs for new strategies: n0130_macro_trendpullback_ger40_d1 and n0130_macro_trendpullback_xauusd_d1</li><li><code>7186bd647</code>  100-knock: 3 themes complete (idxmicro/anchor/cmdbond ~51 fires all KILL) + partial artifacts from 4 limit-stopped agents</li><li><code>7134bb7f5</code>  chore: update reasoning dist history log</li><li><code>3fc5bf692</code>  chore: daily factory autopsy 2026-06-26</li></ul>
+        <ul class="commits"><li><code>94eb585e9</code>  chore(sync): daily autopsy 2026-06-28/29 + dashboard/state refresh</li><li><code>e4987c7fa</code>  Merge remote-tracking branch &#x27;origin/main&#x27; into claude/trend-following-strategy-m0oq9g</li><li><code>2add71f23</code>  Dig: discipline-layer FX trend = RED (genuine OOS-neg); confirms equity-index-only boundary</li><li><code>655b75b65</code>  100-knock COMPLETE: all 7 themes (~93 judged) 0 new PASS; crypto &#x27;PASS&#x27; = BTC-beta dup of n0067; n0142 the sole session winner</li><li><code>c612fb7cc</code>  Merge remote-tracking branch &#x27;origin/main&#x27; into claude/trend-following-strategy-m0oq9g</li></ul>
       </div>
     </div>
   </div>

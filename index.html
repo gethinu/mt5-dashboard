@@ -220,8 +220,8 @@
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-06-30 03:07:28 &middot;
-    JST: 2026-06-30 12:07:28 &middot;
+    Refreshed (UTC): 2026-06-30 03:37:28 &middot;
+    JST: 2026-06-30 12:37:28 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 281
@@ -255,6 +255,36 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-06-30T00:00:00Z</td>
+          <td>tenkei_book_leverage</td>
+          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
+          <td class="reason">mechanical TENKEI small headroom; B is SIZE-driven; genuine lever = human PDF tenkei</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-25T09:00:00Z</td>
+          <td>tailhedge_4th_leg_research</td>
+          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
+          <td class="reason">no 4th convex leg justified; 3-sleeve book final; tail is B+C idiosyncratic</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-25T08:00:00Z</td>
+          <td>jeans_3sleeve_book_v3</td>
+          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
+          <td class="reason">final jeans book Sharpe 3.19 over vetted sleeves</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-25T07:00:00Z</td>
+          <td>jeans_3sleeve_book</td>
+          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
+          <td class="reason">3-way decorrelated book = deployable jeans product</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-06-25T06:00:00Z</td>
+          <td>jeans_unified_book</td>
+          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
+          <td class="reason">deployable product = diversified book; deploy n0130+n0138+n0145 trend core + FX-overnight diversifier</td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-06-25T05:00:00Z</td>
           <td>em_equity_copper_trendpullback_d1</td>
@@ -296,36 +326,6 @@
           <td>tokyo_open_fade_jpycross_5pair_h1</td>
           <td><span class="pill" style="background:#6b7280;">REGISTRY_REMAP</span></td>
           <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-23T13:30:00Z</td>
-          <td>fx_overnight_reversal_widesleeve</td>
-          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-23T12:30:00Z</td>
-          <td>cac_cashopen_gapfade_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
-          <td class="reason">CASH_INDEX_OPEN_PRINT_ARTIFACT: Dukascopy France40 CFD |gap|&gt;=1.2% days=15 vs yf-cash=134 (9x inflation); real-tick OOS t=1.74 n=15 non-sign</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-23T11:55:00Z</td>
-          <td>cac_cashopen_gapfade_d1</td>
-          <td><span class="pill" style="background:#22c55e;">TRIAGE_PASS</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T01:00:00Z</td>
-          <td>crypto_xs_momentum_lsbook_d1</td>
-          <td><span class="pill" style="background:#3b82f6;">NEXT_CANDIDATE_OPEN</span></td>
-          <td class="reason">passes_full_gauntlet_beta_neutral: daily-MTM full t=3.24 (clears M11 GO bar t&gt;=3) Sharpe0.99 disc t2.65/Sh1.11 OOS t1.68/Sh0.99; per-year Sh</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-24T03:30:00Z</td>
-          <td>realrate_xau_anchor_d1</td>
-          <td><span class="pill" style="background:#ef4444;">HARD_KILL_PRESCREEN</span></td>
-          <td class="reason">disc_real_but_oos_reduces_to_gold_beta_complement_test_catches: stage1 &#x27;realY lvl&lt;p10-&gt;LONG gold&#x27; looks PASS (h20 disc+112.5 t5.9 lift+29.6 </td>
         </tr></tbody>
         </table></div>
       </div>
@@ -347,7 +347,7 @@
     <div>
       <div class="card">
         <h2>Today's one action (autopsy 20260630)</h2>
-        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **TODO**</div>
+        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>**n0130 XAUUSD 脚を IC Markets forward-demo に attach する。**<br><br>手順: IC Markets demo (account 52899622, `C:\Users\stair\AppData\Roaming\MetaQuotes\Terminal\AC2D3BF28F74B384F5BB1494E55EE0EB\MQL5\Experts\`) に `n0130_macro_trendpullback_xauusd_d1.ex5` が存在することを確認 → XAUUSD D1 チャートに magic=1013000001・InpLotFixed=0.01・InpSpreadLimitPips=999 で attach → Experts ログで OnInit OK を確認。DAX/CAC/TLT 脚は追って別タスク。これが §5 bottleneck の最小解消単位であり、今日から live P&amp;L を開始できる唯一の行動</div>
       </div>
 
       <div class="card">
@@ -428,7 +428,7 @@
 
       <div class="card">
         <h2>Recent commits</h2>
-        <ul class="commits"><li><code>0de8e2f21</code>  chore: update strategy folder count and refresh dashboard data</li><li><code>94eb585e9</code>  chore(sync): daily autopsy 2026-06-28/29 + dashboard/state refresh</li><li><code>e4987c7fa</code>  Merge remote-tracking branch &#x27;origin/main&#x27; into claude/trend-following-strategy-m0oq9g</li><li><code>2add71f23</code>  Dig: discipline-layer FX trend = RED (genuine OOS-neg); confirms equity-index-only boundary</li><li><code>655b75b65</code>  100-knock COMPLETE: all 7 themes (~93 judged) 0 new PASS; crypto &#x27;PASS&#x27; = BTC-beta dup of n0067; n0142 the sole session winner</li></ul>
+        <ul class="commits"><li><code>66242634c</code>  chore(sync): daily autopsy 2026-06-30 + dashboard/state refresh</li><li><code>94c121c2a</code>  feat(infra): always-awake</li><li><code>e6238a5e9</code>  chore: update strategy folder count and refresh dashboard data</li><li><code>7d8d36fb4</code>  chore(sync): daily autopsy 2026-06-28/29 + dashboard/state refresh</li><li><code>756e420b8</code>  TENKEI leverage test: B is SIZE-driven (M3), shape-tenkei rejected; genuine lever = human PDF</li></ul>
       </div>
     </div>
   </div>

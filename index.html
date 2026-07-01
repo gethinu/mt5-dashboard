@@ -220,8 +220,8 @@
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-07-01 07:07:27 &middot;
-    JST: 2026-07-01 16:07:27 &middot;
+    Refreshed (UTC): 2026-07-01 07:37:27 &middot;
+    JST: 2026-07-01 16:37:27 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 281
@@ -255,6 +255,12 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T07:16:40Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#6b7280;">EA_AUTOCOMPILE_OK</span></td>
+          <td class="reason"></td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-07-01T00:00:00Z</td>
           <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
@@ -320,12 +326,6 @@
           <td>disciplinelayer_batch_mine</td>
           <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
           <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T02:00:00Z</td>
-          <td>em_equity_copper_trendpullback_d1</td>
-          <td><span class="pill" style="background:#22c55e;">TRIAGE_PASS</span></td>
-          <td class="reason"></td>
         </tr></tbody>
         </table></div>
       </div>
@@ -347,7 +347,7 @@
     <div>
       <div class="card">
         <h2>Today's one action (autopsy 20260701)</h2>
-        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>- **TODO**</div>
+        <div class="action-block">_Claude: §1–§6 を総合し、「今日これだけやれば工場は前進する」を 1 個 name。複数書かない。_<br><br>**n0131 forward demo attach を今日実行する。** `strategies/n0131_realskew_lowvol_jpy4_d1/STATUS.md` の「Next action」に書かれた 5 ステップを Gaitame (`C:\MT5_GaitameFinest\`) で実施し、EURJPY 脚を除いた 3 脚 (USDJPY-/GBPJPY-/AUDJPY-) を H20 D1 でチャート attach せよ。完了後 `verifier_v2` を再実行して FORWARD_DEMO_LIVE に昇格させること。n0131 は R2 PASS + Sealed PASS + Dukascopy R2 PASS — 21 日間 attach 待ちで live P&amp;L がゼロのまま。これが今日閉じられれば、3-脚スリーブの daily-MTM 蓄積が始まり次回 autopsy で GO 判定材料が得られる。</div>
       </div>
 
       <div class="card">

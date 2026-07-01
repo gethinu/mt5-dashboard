@@ -213,15 +213,15 @@
         <b style="color:#22c55e;">4</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
-        <b style="color:#ef4444;">2</b>KILL 7d
+        <b style="color:#ef4444;">4</b>KILL 7d
       </div>
     </div>
   </div>
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-07-01 12:07:28 &middot;
-    JST: 2026-07-01 21:07:28 &middot;
+    Refreshed (UTC): 2026-07-01 12:37:30 &middot;
+    JST: 2026-07-01 21:37:30 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 281
@@ -241,12 +241,12 @@
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">4</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">1</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">2</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">1</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">4</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">1</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">4</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">1</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">49</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">11</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">110</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">8</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">49</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">11</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">112</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">8</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -255,6 +255,18 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T13:30:00Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
+          <td class="reason">SEALED_FAIL sleeve EP=-27.28p t=-5.12 ECB cutting cycle 2025 regime-flip; revival=ECB-tightening regime conditioner fresh-n####</td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T12:30:00Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
+          <td class="reason">sealed_fail:EURUSD_n5_EP-27.28p_t-5.12_win0pct_all_losses;EURJPY_n0;pre-committed_kill_trigger_met</td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-07-01T11:33:20Z</td>
           <td>n0137_ecb_eur_drift</td>
@@ -314,18 +326,6 @@
           <td>n0138_trendpullback_heldlow_devidx_global_d1</td>
           <td><span class="pill" style="background:#ef4444;">HARD_KILL</span></td>
           <td class="reason">PYTHON_OVERESTIMATE:market_hours_constraint (SWI20 97% fill-fail balance-12.83%; US500 balance-6.42%)</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-30T22:55:00Z</td>
-          <td>n0130_macro_trendpullback_heldlow_d1</td>
-          <td><span class="pill" style="background:#22c55e;">FORWARD_DEMO_START</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-30T00:00:00Z</td>
-          <td>tenkei_book_leverage</td>
-          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
-          <td class="reason">mechanical TENKEI small headroom; B is SIZE-driven; genuine lever = human PDF tenkei</td>
         </tr></tbody>
         </table></div>
       </div>
@@ -418,10 +418,6 @@
         <tr>
           <td>n0131_realskew_lowvol_jpy4_d1</td>
           <td><span class="pill" style="background:#3b82f6;">FORWARD_DEMO_PREP</span></td>
-        </tr>
-        <tr>
-          <td>n0137_ecb_eur_drift</td>
-          <td><span class="pill" style="background:#06b6d4;">ACTIVE_RESEARCH</span></td>
         </tr></tbody>
         </table></div>
       </div>

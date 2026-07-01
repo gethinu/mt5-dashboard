@@ -210,7 +210,7 @@
     </div>
     <div class="mk-pair">
       <div class="mk-chip" style="border-color:#22c55e;">
-        <b style="color:#22c55e;">2</b>GO 7d
+        <b style="color:#22c55e;">4</b>GO 7d
       </div>
       <div class="mk-chip" style="border-color:#ef4444;">
         <b style="color:#ef4444;">2</b>KILL 7d
@@ -220,8 +220,8 @@
 
   <h1>MT5 Edge Factory &mdash; Live Dashboard</h1>
   <div class="meta">
-    Refreshed (UTC): 2026-07-01 11:07:27 &middot;
-    JST: 2026-07-01 20:07:27 &middot;
+    Refreshed (UTC): 2026-07-01 11:37:27 &middot;
+    JST: 2026-07-01 20:37:27 &middot;
     Auto-reload: 60s &middot;
     Families tracked: 25 &middot;
     Strategy folders: 281
@@ -241,12 +241,12 @@
 
       <div class="card">
         <h2>Decision flow &mdash; last 7 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">2</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">1</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">2</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">1</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">4</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">1</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">2</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">1</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
         <h2>Decision flow &mdash; last 30 days</h2>
-        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">47</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">11</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">111</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">9</div><div class="chip-l">RESCUE</div></div></div>
+        <div class="chip-row"><div class="chip"><div class="chip-n" style="color:#22c55e">49</div><div class="chip-l">GO</div></div><div class="chip"><div class="chip-n" style="color:#3b82f6">11</div><div class="chip-l">NEXT_OPEN</div></div><div class="chip"><div class="chip-n" style="color:#ef4444">111</div><div class="chip-l">KILL</div></div><div class="chip"><div class="chip-n" style="color:#a855f7">9</div><div class="chip-l">RESCUE</div></div></div>
       </div>
 
       <div class="card">
@@ -255,6 +255,42 @@
           <thead><tr><th class="col-secondary">Timestamp</th><th>Family / Variant</th>
                      <th>Decision</th><th>Reject reason</th></tr></thead>
           <tbody>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T11:33:20Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#6b7280;">EA_AUTOCOMPILE_OK</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T12:00:01Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#22c55e;">R2_PASS</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T12:00:00Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#22c55e;">R2_PASS</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T11:20:36Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#6b7280;">EA_AUTOCOMPILE_OK</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T11:18:16Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#6b7280;">EA_AUTOCOMPILE_OK</span></td>
+          <td class="reason"></td>
+        </tr>
+        <tr>
+          <td class="ts col-secondary">2026-07-01T11:08:55Z</td>
+          <td>n0137_ecb_eur_drift</td>
+          <td><span class="pill" style="background:#6b7280;">EA_AUTOCOMPILE_OK</span></td>
+          <td class="reason"></td>
+        </tr>
         <tr>
           <td class="ts col-secondary">2026-07-01T10:40:11Z</td>
           <td>n0121_cb_intervention_narrow_2leg_usdjpy_cadjpy_d1</td>
@@ -290,42 +326,6 @@
           <td>tenkei_book_leverage</td>
           <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
           <td class="reason">mechanical TENKEI small headroom; B is SIZE-driven; genuine lever = human PDF tenkei</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T09:00:00Z</td>
-          <td>tailhedge_4th_leg_research</td>
-          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
-          <td class="reason">no 4th convex leg justified; 3-sleeve book final; tail is B+C idiosyncratic</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T08:00:00Z</td>
-          <td>jeans_3sleeve_book_v3</td>
-          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
-          <td class="reason">final jeans book Sharpe 3.19 over vetted sleeves</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T07:00:00Z</td>
-          <td>jeans_3sleeve_book</td>
-          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
-          <td class="reason">3-way decorrelated book = deployable jeans product</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T06:00:00Z</td>
-          <td>jeans_unified_book</td>
-          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
-          <td class="reason">deployable product = diversified book; deploy n0130+n0138+n0145 trend core + FX-overnight diversifier</td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T05:00:00Z</td>
-          <td>em_equity_copper_trendpullback_d1</td>
-          <td><span class="pill" style="background:#a855f7;">RESCUE</span></td>
-          <td class="reason"></td>
-        </tr>
-        <tr>
-          <td class="ts col-secondary">2026-06-25T04:00:01Z</td>
-          <td>unified_global_equity_trend_d1</td>
-          <td><span class="pill" style="background:#6b7280;">CORROBORATION</span></td>
-          <td class="reason">reinforces n0138 GO_CANDIDATE (developed-core carries sealed); EM adds no standalone family</td>
         </tr></tbody>
         </table></div>
       </div>
